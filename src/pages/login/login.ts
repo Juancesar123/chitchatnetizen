@@ -1,0 +1,42 @@
+import { RegisterPage } from './../register/register';
+import { AuthenticationProvider } from './../../providers/authentication/authentication';
+import { TabsPage } from './../tabs/tabs';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-login',
+  templateUrl: 'login.html',
+  providers:[AuthenticationProvider]
+})
+export class LoginPage {
+  username:String;
+  password:String;
+  constructor(public authservice:AuthenticationProvider,public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage');
+  }
+  Login(){
+    let data = {
+      email:this.username,
+      password:this.password,
+      strategy:'local'
+    }
+    this.authservice.Auth(data).subscribe(val =>{
+      this.navCtrl.setRoot(TabsPage);
+    })
+  }
+  Register(){
+    this.navCtrl.push(RegisterPage)
+  }
+}

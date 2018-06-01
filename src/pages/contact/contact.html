@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>
       Contact
     </ion-title>
@@ -7,11 +7,25 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/person1.jpeg">
+        </ion-avatar>
+        <h2>Cher</h2>
+        <p>Ugh. As if.</p>
+      </ion-item>
+      <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/person1.jpeg">
+          </ion-avatar>
+          <h2>Cher</h2>
+          <p>Ugh. As if.</p>
+        </ion-item>
+    </ion-list>
+    
+    <!-- Real floating action button, fixed. It will not scroll with the content -->
+    <ion-fab right bottom>
+      <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
 </ion-content>
